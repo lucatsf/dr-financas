@@ -30,7 +30,7 @@ Para garantir a resiliência a falhas na integração com a API externa e a even
 - Half-Open (Meio-Aberto): Um número limitado de requisições de teste é permitido para a API externa. Se essas requisições forem bem-sucedidas, ele volta para o estado "Closed". Se falharem, ele retorna para o estado "Open".
 
 
-## solução para Exibir o ultimo status de um processamento.
+## Solução para Exibir o ultimo status de um processamento.
 
 ![alt text](docs/diagram.png)
 
