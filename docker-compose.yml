@@ -1,0 +1,27 @@
+# docker-compose.yml
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: invoice_mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - app_network
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: invoice_rabbitmq
+    ports:
+      - "5672:5672"  # Porta padrão do RabbitMQ
+      - "15672:15672" # Porta do plugin de gerenciamento (Web UI)
+    networks:
+      - app_network
+
+volumes:
+  mongodb_data:
+
+networks:
+  app_network:
+    driver: bridge
