@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "333e7ffb-3c53-4902-a31c-4d2bf0afc161",
+		"name": "DR Finanças",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28700975"
+	},
+	"item": [
+		{
+			"name": "Emitir Nota Fiscal",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cnpjTomadorServico\": \"12.345.678/0001-90\",\n  \"municipioPrestacaoServico\": \"São Paulo\",\n  \"estadoPrestacaoServico\": \"SP\",\n  \"valorServico\": 1650.75,\n  \"dataDesejadaEmissao\": \"2025-06-02T00:00:00.000Z\",\n  \"descricaoServico\": \"Consultoria de software\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/invoice-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"invoice-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Nota Fiscal",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/invoice-requests/b75ad1d6-f6d3-4dbf-b0bb-8430b96e3a00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"invoice-requests",
+						"b75ad1d6-f6d3-4dbf-b0bb-8430b96e3a00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Notas Fiscais",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/invoice-requests/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"invoice-requests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Teste DR Financas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "87451e7c-48bc-48d1-a038-c16783dd404c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cnpjTomadorServico\": \"12.345.678/0001-90\",\n  \"municipioPrestacaoServico\": \"São Paulo\",\n  \"estadoPrestacaoServico\": \"SP\",\n  \"valorServico\": 1650.75,\n  \"dataDesejadaEmissao\": \"2025-06-02T00:00:00.000Z\",\n  \"descricaoServico\": \"Consultoria de software\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.drfinancas.com/testes/notas-fiscais",
+					"protocol": "https",
+					"host": [
+						"api",
+						"drfinancas",
+						"com"
+					],
+					"path": [
+						"testes",
+						"notas-fiscais"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

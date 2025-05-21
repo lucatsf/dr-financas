@@ -1,6 +1,33 @@
 
 # Gestão de Solicitações de Notas Fiscais
 
+## Execução do projeto
+
+Executar rabbitmq e mongodb com docker compose:
+```bash
+docker compose up -d
+```
+Executar a api em um terminal:
+```bash
+npm run start:dev
+```
+Executar o worker em outro terminal:
+```bash
+npm run worker
+```
+Executar os testes:
+```bash
+npm run test
+```
+## Endpoints
+### Solicitação de Nota Fiscal (Invoice Request) PORTA 3000
+- **POST** `/api/invoice-request`: Cria uma nova solicitação de nota fiscal.
+- **GET** `/api/invoice-request`: Lista todas as solicitações de nota fiscal.
+- **GET** `/api/invoice-request/:id`: Obtém os detalhes de uma solicitação de nota fiscal específica.
+
+Collection para uso no Postman no diretorio `docs`:
+- [Postman Collection](docs/DR_Finanças.postman_collection.json)
+
 ## Solicitação de Nota Fiscal (Invoice Request):
 
 1. Representa a intenção de emitir uma nota fiscal. Seus atributos são:
